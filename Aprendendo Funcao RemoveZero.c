@@ -18,14 +18,18 @@ int RemoveZero (int v[], int n)
 }
 
 int main(){
+    int tamanhoVetor;
+    int *vetor;
+    bool temZeros = false;
+
     setlocale(LC_ALL, "Portuguese");
     printf("Olá Seja bem vindo ao novo Criador de Vetores 3000!!!\n\n");
-    printf("Sem mais delongas, insira o tamanho que você quer que o seu vetor tenha:");
-    int tamanhoVetor;
+    printf("Sem mais delongas, insira o tamanho que você quer que o seu vetor tenha: ");
+
     scanf("%d", &tamanhoVetor);
-    int *vetor;
+
     vetor = (int *)malloc(tamanhoVetor * sizeof(int));
-    bool temZeros = false;
+
     for(int i = 0; i < tamanhoVetor; i++){
         printf("Insira o valor do %do elemento do seu vetor: ", i+1);
         scanf("%d", &vetor[i]);
@@ -33,6 +37,7 @@ int main(){
     }
 
     printf("Legal, agora vamos imprimir o seu vetor!\n\n");
+
     for(int i = 0; i < tamanhoVetor; i++){
         printf("%d\t", vetor[i]);
     }
@@ -44,8 +49,11 @@ int main(){
         int x = RemoveZero(vetor, tamanhoVetor);
     }
     else{
-        printf("\n\nQue belo vetor!");
+        printf("\n\nQue belo vetor!\n");
     }
+
+    free(tamanhoVetor);
     free(vetor);
+
     return 0;
 }
