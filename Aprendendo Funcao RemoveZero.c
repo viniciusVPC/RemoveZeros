@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <locale.h>
 
 int RemoveZero (int v[], int n)
 {
@@ -17,16 +18,16 @@ int RemoveZero (int v[], int n)
 }
 
 int main(){
-
-    printf("Ola Seja bem vindo ao novo Criador de Vetores 3000!!!\n\n");
-    printf("Sem mais delongas, insira o tamanho que voce quer que o seu vetor tenha:");
+    setlocale(LC_ALL, "Portuguese");
+    printf("Olá Seja bem vindo ao novo Criador de Vetores 3000!!!\n\n");
+    printf("Sem mais delongas, insira o tamanho que você quer que o seu vetor tenha:");
     int tamanhoVetor;
     scanf("%d", &tamanhoVetor);
     int *vetor;
     vetor = (int *)malloc(tamanhoVetor * sizeof(int));
     bool temZeros = false;
     for(int i = 0; i < tamanhoVetor; i++){
-        printf("Insira o valor do %do elemento do seu array: ", i+1);
+        printf("Insira o valor do %do elemento do seu vetor: ", i+1);
         scanf("%d", &vetor[i]);
         if(vetor[i] == 0) temZeros = true;
     }
@@ -37,8 +38,8 @@ int main(){
     }
 
     if(temZeros){
-        printf("\n\nOpa, notamos que o seu vetor possui alguns zeros!\nSegundo a nova lei universal, zeros em vetores sao proibidos!\n");
-        printf("Vamos remover esses zeros pra voce!\n\n");
+        printf("\n\nOpa, notamos que o seu vetor possui alguns zeros!\nSegundo a nova lei universal, zeros em vetores são proibidos!\n");
+        printf("Vamos remover esses zeros pra você!\n\n");
         printf("Pronto! Olha como o seu vetor esta bonitinho agora: \n\n");
         int x = RemoveZero(vetor, tamanhoVetor);
     }
